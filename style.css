@@ -1,0 +1,33 @@
+button {
+  margin-left: 3rem;
+}
+
+.button-holders {
+  border: 0.1rem solid black;
+}
+
+.die-container {
+  border: 0.1rem solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.die {
+  height: 10rem;
+  width: 10rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  border: black 0.2rem solid;
+  color: black;
+  font-size: 4rem;
+  display: flex;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+}
