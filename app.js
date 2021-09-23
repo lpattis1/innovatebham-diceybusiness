@@ -6,13 +6,15 @@ const sumBtn = document.querySelector(".sum-btn");
 
 // Tracker
 let total = [];
+const dieTotal = document.querySelector(".die-total-num");
 
 // The Die Class
 
 class Die {
   constructor() {
-    this.value = this.roll(1, 7);
+    // Create dies
 
+    this.value = this.roll(1, 7);
     this.die = document.createElement("div");
     this.die.className = "die";
     this.die.textContent = this.value;
@@ -42,4 +44,29 @@ generateBtn.addEventListener("click", generateDie);
 
 function generateDie() {
   const newDie = new Die();
+  total.push(newDie);
+}
+
+// Get the sum of all dies
+
+sumBtn.addEventListener("click", sumDice);
+
+function sumDice() {
+  let updatedTotal = 0;
+  const dice = document.querySelectorAll(".die");
+
+  dice.forEach((die) => {
+    updatedTotal += Number(die.textContent);
+  });
+
+  dieTotal.innerHTML = `The total is: <span class="highlight">${updatedTotal}</span>`;
+
+  const highlight = document.querySelector(".highlight");
+  highlight.style.color = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+}
+
+// Change the total num's color
+
+function randomRGB() {
+  return Math.floor(Math.random() * 255);
 }
