@@ -19,6 +19,8 @@ class Die {
     this.die.textContent = this.value;
     dieContainer.appendChild(this.die);
 
+    // Change die number individually
+
     this.die.addEventListener("click", () => {
       this.die.textContent = this.roll(1, 7);
       this.value = Number(this.die.textContent);
@@ -29,6 +31,16 @@ class Die {
     rerollBtn.addEventListener("click", () => {
       this.die.textContent = this.roll(1, 7);
       this.value = Number(this.die.textContent);
+    });
+
+    // Remove a die
+    this.die.addEventListener("dblclick", (e) => {
+      const allDie = document.querySelectorAll(".die");
+      allDie.forEach((all) => {
+        if (all === e.target) {
+          e.target.remove();
+        }
+      });
     });
   }
 
@@ -52,6 +64,7 @@ sumBtn.addEventListener("click", sumDice);
 function sumDice() {
   let updatedTotal = 0;
   const dice = document.querySelectorAll(".die");
+  console.log(dice);
 
   dice.forEach((die) => {
     updatedTotal += Number(die.textContent);
