@@ -5,7 +5,6 @@ const rerollBtn = document.querySelector(".reroll-btn");
 const sumBtn = document.querySelector(".sum-btn");
 
 // Tracker
-let total = [];
 const dieTotal = document.querySelector(".die-total-num");
 
 // The Die Class
@@ -44,7 +43,6 @@ generateBtn.addEventListener("click", generateDie);
 
 function generateDie() {
   const newDie = new Die();
-  total.push(newDie);
 }
 
 // Get the sum of all dies
